@@ -61,7 +61,6 @@
 body{
     background-color: #root()[--surface-light] !important;
     overflow-x: hidden;
-
 }
 
 nav {
@@ -110,12 +109,12 @@ nav {
 }
 
 header {
-    padding-top: 3rem;
+    padding-top: 5rem;
     color: #root[--text-1];
     background-color: black;
 
     .text-data{
-        padding: 6rem 0 1rem 3rem;
+        padding: 8rem 0 1rem 3rem;
         border: none;
 
         .img_z{
@@ -186,7 +185,7 @@ header {
         }
 
         button{
-            margin-top: 6rem;
+            margin-top: 3rem;
             text-align: center;
             width: 11rem;
             padding: 0.8rem;
@@ -201,21 +200,22 @@ header {
 .overlay-parent{
 
     position: relative;
-    margin-top: 0.1rem;
+    margin-top: -0.1rem;
 
+    
     .diagonal-parent{
+        clip-path: polygon(0 0, 100% 0%, 0 100%, 0 100%);
         position: relative;
         height: 16rem;
         background-color: black;
-        clip-path: polygon(0 0, 100% 0%, 0 100%, 0 100%);
-
+        border-color: black;
     }
 
     .diagEle1{
         position: absolute;
         top: 0;
         right:-0.3rem;
-      
+        
     }
     .diagEle2{
 
