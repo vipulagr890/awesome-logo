@@ -1,0 +1,296 @@
+#root() {
+  /* Colors: */
+  --info-light-pressed: #998dd9;
+  --surface-normal-pressed: #cad4de;
+  --danger: #d21c1c;
+  --success-hover: #238b31;
+  --success: #28a138;
+  --warning: #e98305;
+  --warning-light-pressed: #f8d3ab;
+  --info-light: #eae6ff;
+  --teal-light-pressed: #c0e8e4;
+  --teal-normal: #00a991;
+  --primary-pressed: #01508e;
+  --primary-hover: #0161ac;
+  --primary-light: #e8f4fd;
+  --secondary-light: #fffad2;
+  --dark-light-hover: #404854;
+  --dark-pressed: #0b0c0f;
+  --dark-hover: #181b20;
+  --dark-light: #6c717a;
+  --dark-light-pressed: #363d47;
+  --primary-light-pressed: #b4dbf8;
+  --primary-light-hover: #d0e9fb;
+  --surface-light-hover: #e5eaef;
+  --surface-light-pressed: #d6dee6;
+  --secondary-paragraph: #94a8be;
+  --surface-light: #f5f7f9;
+  --secondary: #ffcf00;
+  --info: #6554c0;
+  --dark: #252a31;
+  --text-1: #ffffff;
+  --primary: #007ed9;
+  --web-logo: #00D0D8;
+};
+
+// font-weight map
+#font-weight() {
+    --Extra-Thin: 50;
+    --Thin: 100;
+    --Extra-Light: 200;
+    --Light: 300;
+    --Regular: 400;
+    --Medium: 500;
+    --Semi-Bold: 600;
+    --Bold: 700;
+    --Extra-Bold: 800;
+    --Black: 900; //heavy
+    --Extra-Black: 950;  
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style:none;
+}
+
+
+body{
+    background-color: #root()[--surface-light] !important;
+}
+
+nav {
+    height: 50px;
+    background-color: #root[--primary];
+    color: #root[--surface-light];
+    
+    .navbar-brand{
+        font-family: Poppins, serif;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 1.6rem;
+    }
+    
+    .navbar-nav{
+        .nav-item > a {
+            font-family: poppins;
+            font-weight: #font-weight[--Regular];
+            color: #root[--text-1];
+
+            }
+        
+            a:active{
+                color: white;
+            }
+            a:hover {
+                font-style: none;
+                border-bottom: 0.2rem solid white;
+            }
+        
+            .sign-in{
+                margin: 0 2rem 0 2rem;
+            }
+
+        @media only screen and (max-width: 991px) {
+            .nav-item{
+                text-align: center;
+                background: linear-gradient(90deg, rgba(0,0,0,0.4) 100%, rgba(0,212,255,1) 100%);
+            }
+            .sign-in{
+                margin: 0;
+            }
+        }
+    }
+
+}
+
+header {
+    padding-top: 5rem;
+    color: #root[--text-1];
+    background-color: black;
+
+    .text-data{
+        padding: 8rem 0 1rem 3rem;
+        border: none;
+
+        .img_z{
+            height: 2.6rem;
+            width: 2.6rem;
+        }
+
+        .wow{
+            font-family: poppins;
+            font-weight: #font-weight[--Regular];
+            background-color: #root[--web-logo];
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 12rem;
+            height: 4rem;
+            border-radius: 0.4rem;
+            color: #root[--dark];
+            transition: all 3ms ease-out;
+
+            &:hover{
+                color: #root[--dark-light-hover];
+
+            }
+        }
+
+
+        .highlighted-text{
+            color: #root[--primary];
+            font-family: Poppins;
+            font-weight: #font-weight[--Regular];
+            font-size: 1.6rem;
+        }
+
+        .para{
+            font-family: Poppins;
+            font-weight: #font-weight[--Light];
+            font-size: 1.1rem;
+        }
+
+        .links{
+            font-family: poppins;
+            font-weight: #font-weight[--Light];
+            display: flex;
+            align-items: center;
+            justify-content: space-between;        
+            width: 16rem;
+            padding: 0.6rem;
+            margin-bottom: 0.6rem;
+            background-color: #929292;
+            opacity: 0.5;
+            border-radius: 0.4rem;
+            color: #root[--surface-normal-pressed];
+            transition: all 3ms ease-out;
+            &::after{
+                content: "\203A";   
+                margin-right: 0.4rem;      
+            }
+
+        }
+
+
+        .links:hover{
+            opacity: 1;
+            &::after{
+                content: "\2192";  
+            }
+        }
+
+        button{
+            margin-top: 6rem;
+            text-align: center;
+            width: 11rem;
+            padding: 0.8rem;
+            color: #2F7CD3;
+            border-radius: 5px;
+            border: 0.5rem solid rgba(29, 30, 31, 0.8);
+        }
+
+    }   
+}
+
+.overlay-parent{
+
+    position: relative;
+
+    .diagonal-parent{
+        position: relative;
+        height: 16rem;
+        background-color: black;
+        clip-path: polygon(0 0, 100% 0%, 0 100%, 0 100%);
+
+    }
+
+    .diagEle1{
+        position: absolute;
+        top: 0;
+        right:-0.3rem;
+    }
+    .diagEle2{
+
+        position: absolute;
+        bottom: 0;
+        left:-0.3rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        &{
+            display: none;
+        }
+    }
+}
+
+.card-data{
+    margin: 4rem 8rem 4rem 8rem;
+    max-width: 60rem;
+    padding: 2rem;
+    background: var(--text-1) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px var(--surface-light-pressed);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #D6DEE6;
+    border-radius: 1rem;
+    
+
+    .highlighted-text-two{
+        color: #root[--primary];
+        font-family: poppins;
+        font-weight: #font-weight[--Medium];
+        font-size: 2.3rem;
+    }
+
+    .para-text{
+        font-family: poppins;
+        font-weight: #font-weight[--Medium];
+        font-size: 1.4rem;
+    }
+
+    button{
+        font-family: poppins;
+        font-weight: #font-weight[--Medium];
+        font-size: 1rem;
+        margin: 2rem;
+        height: 4rem;
+        width: auto;
+        background-color: #root[--text-1];
+        color: #2F7CD3;
+        border-radius: 5px;
+        border: 0.5rem solid rgba(29, 30, 31, 0.15);
+    }
+}
+
+footer{
+
+    .footer-logo{
+        font-family: Poppins, serif;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 1.2rem;}
+
+    li{
+        font-family: Poppins;
+        font-weight: #font-weight[--Light];
+    }
+
+    .footer-title{
+        font-family: Poppins;
+        font-weight: #font-weight[--Regular];
+    }
+
+    .foo-footer{
+        color: #root[--dark];
+        display: flex;
+        font-family: poppins;
+        font-weight: #font-weight[--Extra-Light];
+        font-size: 0.8rem;
+        justify-content: space-between;
+        margin: 0 4rem 0 4rem;
+    }
+        
+}   
